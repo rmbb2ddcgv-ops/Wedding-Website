@@ -609,6 +609,57 @@ footer {
   .gi1,.gi2,.gi3,.gi4,.gi5,.gi6 { grid-column: auto; grid-row: auto; aspect-ratio: 1/1; }
   nav ul li a { font-size: 0.6rem; }
 }
+  
+/* ——— GALLERY ——— */
+#gallery { background: var(--charcoal); padding: 6rem 2rem; }
+#gallery .section-tag { color: var(--gold-light); }
+#gallery .section-title { color: var(--ivory); }
+#gallery .section-subtitle { color: rgba(251,248,242,0.5); }
+ 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  gap: 0.75rem;
+  margin-top: 3rem;
+}
+.gallery-item {
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  position: relative;
+}
+.gallery-item::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(30,25,18,0.0);
+  transition: background 0.4s;
+}
+.gallery-item:hover::after { background: rgba(184,145,90,0.12); }
+.gallery-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.85) sepia(0.08);
+  transition: transform 0.6s ease;
+}
+.gallery-item:hover img { transform: scale(1.04); }
+ 
+/* Row 1 */
+.gi1  { grid-column: 1/5;  grid-row: 1; aspect-ratio: 4/3; }
+.gi2  { grid-column: 5/8;  grid-row: 1; aspect-ratio: 3/4; }
+.gi3  { grid-column: 8/13; grid-row: 1; aspect-ratio: 4/3; }
+/* Row 2 */
+.gi4  { grid-column: 1/4;  grid-row: 2; aspect-ratio: 3/4; }
+.gi5  { grid-column: 4/9;  grid-row: 2; aspect-ratio: 16/9; }
+.gi6  { grid-column: 9/13; grid-row: 2; aspect-ratio: 3/4; }
+/* Row 3 */
+.gi7  { grid-column: 1/5;  grid-row: 3; aspect-ratio: 4/3; }
+.gi8  { grid-column: 5/9;  grid-row: 3; aspect-ratio: 4/3; }
+.gi9  { grid-column: 9/13; grid-row: 3; aspect-ratio: 4/3; }
+/* Row 4 */
+.gi10 { grid-column: 1/4;  grid-row: 4; aspect-ratio: 3/4; }
+.gi11 { grid-column: 4/8;  grid-row: 4; aspect-ratio: 4/3; }
+.gi12 { grid-column: 8/13; grid-row: 4; aspect-ratio: 3/4; }
 </style>
 </head>
 <body>
@@ -766,6 +817,50 @@ footer {
   <p class="quote-attr">— Emily Brontë, Wuthering Heights</p>
 </div>
 
+<!-- GALLERY -->
+<section id="gallery">
+  <p class="section-tag">Gallery</p>
+  <h2 class="section-title">A glimpse of us</h2>
+  <p class="section-subtitle" style="max-width:460px; margin:0 auto 3rem;">Moments that led us here — on the mountain, in Denver, and everywhere in between.</p>
+  <div class="gallery-grid wide-inner">
+    <div class="gallery-item gi1 reveal">
+      <img src="images/gi1.jpeg" alt="Night skiing together" loading="lazy">
+    </div>
+    <div class="gallery-item gi2 reveal reveal-delay-1">
+      <img src="images/gi2.jpeg" alt="Jackson Hole ski trip" loading="lazy">
+    </div>
+    <div class="gallery-item gi3 reveal reveal-delay-2">
+      <img src="images/gi3.jpeg" alt="Yellowstone in winter" loading="lazy">
+    </div>
+    <div class="gallery-item gi4 reveal">
+      <img src="images/gi4.jpeg" alt="Tropical getaway" loading="lazy">
+    </div>
+    <div class="gallery-item gi5 reveal reveal-delay-1">
+      <img src="images/gi5.jpeg" alt="Chichen Itza, Mexico" loading="lazy">
+    </div>
+    <div class="gallery-item gi6 reveal reveal-delay-2">
+      <img src="images/gi6.jpeg" alt="Chicago Marathon" loading="lazy">
+    </div>
+    <div class="gallery-item gi7 reveal">
+      <img src="images/gi7.jpeg" alt="Road biking in the Rockies" loading="lazy">
+    </div>
+    <div class="gallery-item gi8 reveal reveal-delay-1">
+      <img src="images/gi8.jpeg" alt="Rockies game at Coors Field" loading="lazy">
+    </div>
+    <div class="gallery-item gi9 reveal reveal-delay-2">
+      <img src="images/gi9.jpeg" alt="Delicate Arch, Arches NP" loading="lazy">
+    </div>
+    <div class="gallery-item gi10 reveal">
+      <img src="images/gi10.jpeg" alt="The Narrows, Zion NP" loading="lazy">
+    </div>
+    <div class="gallery-item gi11 reveal reveal-delay-1">
+      <img src="images/gi11.jpeg" alt="Camping at Arches" loading="lazy">
+    </div>
+    <div class="gallery-item gi12 reveal reveal-delay-2">
+      <img src="images/gi12.jpeg" alt="Summit of Mt. Sherman, 14,043 ft" loading="lazy">
+    </div>
+  </div>
+  
 <!-- REGISTRY -->
 <section id="registry">
   <div class="section-inner">
