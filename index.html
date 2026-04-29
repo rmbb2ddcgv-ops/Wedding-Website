@@ -246,13 +246,13 @@ section {
 }
 
 .section-tag {
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 1rem;
   text-align: center;
-  opacity: 0.85;
+  opacity: 1;
 }
 
 .section-title {
@@ -326,7 +326,7 @@ section {
 }
 
 /* ——— DETAILS ——— */
-#details { background: var(--ivory); }
+#details { background: #F9F0EC; }
 .details-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -399,6 +399,10 @@ section {
 
 /* ——— REGISTRY ——— */
 #registry { background: var(--cream); }
+#story .section-tag { color: var(--gold); }
+#details .section-tag { color: var(--rose); }
+#rsvp .section-tag { color: var(--sage-dark); }
+#travel .section-tag { color: var(--sage-dark); }
 #registry .section-tag { color: var(--gold); }
 #registry .section-title { color: var(--charcoal); }
 #registry .section-subtitle { color: rgba(46,43,38,1); }
@@ -531,6 +535,7 @@ section {
     linear-gradient(135deg, rgba(30,25,18,0.94) 0%, rgba(30,25,18,0.88) 100%),
     url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1400&q=80') center/cover no-repeat;
   padding: 6rem 2rem;
+  margin-top: 5rem;
   text-align: center;
 }
 .quote-mark {
@@ -674,7 +679,7 @@ footer {
 <style>
  
 /* ——— GALLERY ——— */
-#gallery { background: var(--charcoal); padding: 6rem 2rem; }
+#gallery { background: var(--charcoal); padding: 6rem 2rem 8rem; }
 #gallery .section-tag { color: var(--gold-light); }
 #gallery .section-title { color: var(--ivory); }
 #gallery .section-subtitle { color: rgba(251,248,242,0.85); }
@@ -740,13 +745,13 @@ footer {
  
 /* Row 4 */
 .gi10 { grid-column: span 6; aspect-ratio: 3/1; }
-.gi11 { grid-column: span 3; aspect-ratio: 3/2; }
-.gi12 { grid-column: span 3; aspect-ratio: 3/2; }
+.gi11 { grid-column: span 3; aspect-ratio: 4/3; }
+.gi12 { grid-column: span 3; aspect-ratio: 4/3; }
  
 /* Row 5 */
-.gi13 { grid-column: span 3; aspect-ratio: 3/2; }
-.gi14 { grid-column: span 3; aspect-ratio: 3/2; }
-.gi15 { grid-column: span 6; aspect-ratio: 3/1; }
+.gi13 { grid-column: span 4; aspect-ratio: 4/3; }
+.gi14 { grid-column: span 4; aspect-ratio: 4/3; }
+.gi15 { grid-column: span 4; aspect-ratio: 4/3; }
  
 /* Row 6 */
 .gi16 { grid-column: span 4; aspect-ratio: 4/3; }
@@ -782,10 +787,11 @@ footer {
   <div class="nav-monogram">A & A</div>
   <ul>
     <li><a href="#story">Our Story</a></li>
-    <li><a href="#details">Details</a></li>
     <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#registry">Registry</a></li>
+    <li><a href="#details">Celebration Details</a></li>
+    <li><a href="#rsvp">RSVP</a></li>
     <li><a href="#travel">Travel</a></li>
+    <li><a href="#registry">Registry</a></li>
   </ul>
 </nav>
 
@@ -831,82 +837,14 @@ footer {
       </div>
       <div class="story-text reveal reveal-delay-1">
         <p class="story-pull">"Some paths lead exactly where they were always meant to."</p>
-        <p class="story-body">Antonia left Boston for Denver chasing the life she'd always wanted — big mountains, wide open air, and runs that actually challenge her. Avery, one of her closest friends, found his way back to Colorado from San Francisco around the same time, drawn home by family and the resorts he grew up on.</p>
-        <p class="story-body">They'd known each other for years, but something shifted the first time Avery watched Nia on the mountain — the way she skied, the effortless confidence of it, layered on top of everything he already knew and loved about her. That was the moment. One first date at Postino in Denver later, and somewhere on the walk home that evening, Avery told her he loved her. He meant it then and he means it more now.</p>
-        <p class="story-body">They've been inseparable ever since — ski days, long hikes, and in 2024, an Aussie-doodle named Duffy who completed the picture entirely. On the afternoon of October 29th, on one of their favorite trails, Avery proposed. Nia said yes. And now, we celebrate.</p>
+        <p class="story-body">Antonia left Boston for Denver chasing the adventurous life she'd always wanted — big mountains, wide open air, and ski runs that actually challenged her. Avery, one of her closest friends, found his way back to Colorado from San Francisco around the same time, drawn home by family, the ski resorts he loved, and the life outdoors he was missing.</p>
+        <p class="story-body">They'd been best friends for years, but something shifted the first time Avery watched Nia on the mountain. The way she skied, the effortless confidence of it, layered on top of everything he already knew and loved about her - that was the moment. On the walk home after their first date at Postino, Avery told her he loved her. He meant it then and he means it more now.</p>
+        <p class="story-body">They've been inseparable ever since — ski days, long hikes, camping trips, and in 2024, an Aussie-doodle named Duffy who completed the picture entirely. On the afternoon of October 29th, on one of their favorite hiking trails, Avery proposed and Nia said yes once she realized: 'this is really happening.' And now, we celebrate.</p>
 
       </div>
     </div>
   </div>
 </section>
-
-<!-- DETAILS -->
-<section id="details">
-  <div class="section-inner">
-    <p class="section-tag reveal">Event Details</p>
-    <h2 class="section-title reveal reveal-delay-1">The day's schedule</h2>
-    <p class="section-subtitle reveal reveal-delay-2">Everything you need to know for May the 'Big Day'.</p>
-
-    <div class="details-cards">
-      <div class="detail-card reveal">
-        <svg class="detail-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blush)">
-          <circle cx="24" cy="24" r="20"/>
-          <path d="M16 24c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8"/>
-          <path d="M24 16v3M24 35v-3M16 24h-3M38 24h-3"/>
-          <path d="M18.9 18.9l-2.1-2.1M31.2 31.2l-2.1-2.1M18.9 29.1l-2.1 2.1M31.2 16.8l-2.1 2.1"/>
-        </svg>
-        <p class="detail-type">Ceremony</p>
-        <p class="detail-name">The Wedding Island on the 18th Hole</p>
-        <p class="detail-time">4:30 PM — Guests seated by 4:15 PM</p>
-        <p class="detail-address">
-          Vail Golf Club<br>
-          1775 Sunburst Drive<br>
-          Vail, CO 81657<br>United States
-        </p>
-        <a href="https://maps.google.com/?q=Vail+Golf+Club+1775+Sunburst+Dr+Vail+CO" class="detail-link" target="_blank">View on Maps →</a>
-      </div>
-
-      <div class="detail-card reveal reveal-delay-1">
-        <svg class="detail-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blush)">
-          <path d="M8 36V20l16-10 16 10v16H8z"/>
-          <path d="M18 36v-8h12v8"/>
-          <path d="M8 20h32"/>
-          <path d="M24 10v10"/>
-        </svg>
-        <p class="detail-type">Reception</p>
-        <p class="detail-name">The Clubhouse</p>
-        <p class="detail-address" style="margin-top:0.75rem;">
-          Vail Golf Club<br>
-          1775 Sunburst Drive, Vail, CO
-        </p>
-        <p class="detail-address" style="margin-top:1.25rem; line-height:2;">
-          5:00 PM — Cocktail Hour<br>
-          6:00 PM — Reception &amp; Dinner<br>
-          9:00 PM — Dancing until 11:00
-        </p>
-      </div>
-    </div>
-
-    <!-- Dress Code Banner -->
-    <div class="travel-banner reveal" style="margin-top:1.5rem;">
-      <div>
-        <p class="travel-banner-label">Dress Code — Formal Attire</p>
-        <p class="travel-banner-title">Suits &amp; Dresses Required</p>
-        <p class="travel-banner-body">
-          <span style="text-decoration:underline; font-weight:600;">Gentlemen</span> — Suit &amp; Tie or Sport Coat required. No jeans, No Cowboy Boots, No Open Collar.<br>
-          <span style="text-decoration:underline; font-weight:600;">Ladies</span> — Cocktail Dress or Formal Gown. The ceremony is outdoors at 8,150 ft — layers &amp; block heels warmly recommended.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- QUOTE BAND -->
-<div class="quote-band">
-  <span class="quote-mark">"</span>
-  <p class="quote-text">You are the finest, loveliest, tenderest, and most beautiful person I have ever known — and even that is an understatement.</p>
-  <p class="quote-attr">— F. Scott Fitzgerald</p>
-</div>
 
 <!-- GALLERY -->
 <section id="gallery">
@@ -966,10 +904,78 @@ footer {
       <img src="images/Snow_Bike.jpeg" alt="Biking to Alpine Visitor Center" loading="lazy">
     </div>
     <div class="gallery-item gi18 reveal reveal-delay-2">
-      <img src="images/Sherman.jpeg" alt="Summit of Mt. Sherman, 14,043 ft" loading="lazy">
+      <img src="images/Sherman.jpeg" alt="Summit of Mt. Sherman, 14,043 ft" loading="lazy" style="object-position: top;">
     </div>
   </div>
   
+<!-- QUOTE BAND -->
+<div class="quote-band">
+  <span class="quote-mark">"</span>
+  <p class="quote-text">You are the finest, loveliest, tenderest, and most beautiful person I have ever known — and even that is an understatement.</p>
+  <p class="quote-attr">— F. Scott Fitzgerald</p>
+</div>
+
+<!-- DETAILS -->
+<section id="details">
+  <div class="section-inner">
+    <p class="section-tag reveal">Celebration Details</p>
+    <h2 class="section-title reveal reveal-delay-1" style="color:var(--charcoal);">The day's schedule</h2>
+    <p class="section-subtitle reveal reveal-delay-2" style="color:var(--charcoal);">Everything you need to know for the 'Big Day'.</p>
+
+    <div class="details-cards">
+      <div class="detail-card reveal">
+        <svg class="detail-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blush)">
+          <circle cx="24" cy="24" r="20"/>
+          <path d="M16 24c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8"/>
+          <path d="M24 16v3M24 35v-3M16 24h-3M38 24h-3"/>
+          <path d="M18.9 18.9l-2.1-2.1M31.2 31.2l-2.1-2.1M18.9 29.1l-2.1 2.1M31.2 16.8l-2.1 2.1"/>
+        </svg>
+        <p class="detail-type">Ceremony</p>
+        <p class="detail-name">The Wedding Island on the 18th Hole</p>
+        <p class="detail-time">4:30 PM — Guests seated by 4:15 PM</p>
+        <p class="detail-address">
+          Vail Golf Club<br>
+          1775 Sunburst Drive<br>
+          Vail, CO 81657<br>United States
+        </p>
+        <a href="https://maps.google.com/?q=Vail+Golf+Club+1775+Sunburst+Dr+Vail+CO" class="detail-link" target="_blank">View on Maps →</a>
+      </div>
+
+      <div class="detail-card reveal reveal-delay-1">
+        <svg class="detail-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blush)">
+          <path d="M8 36V20l16-10 16 10v16H8z"/>
+          <path d="M18 36v-8h12v8"/>
+          <path d="M8 20h32"/>
+          <path d="M24 10v10"/>
+        </svg>
+        <p class="detail-type">Reception</p>
+        <p class="detail-name">The Clubhouse</p>
+        <p class="detail-address" style="margin-top:0.75rem;">
+          Vail Golf Club<br>
+          1775 Sunburst Drive, Vail, CO
+        </p>
+        <p class="detail-address" style="margin-top:1.25rem; line-height:2;">
+          5:00 PM — Cocktail Hour<br>
+          6:00 PM — Reception &amp; Dinner<br>
+          9:00 PM — Dancing until 11:00
+        </p>
+      </div>
+    </div>
+
+    <!-- Dress Code Banner -->
+    <div class="travel-banner reveal" style="margin-top:1.5rem; background:#fff; border-left:1px solid var(--border);">
+      <div>
+        <p class="travel-banner-label">Dress Code — Formal Attire</p>
+        <p class="travel-banner-title">Suits &amp; Dresses Required</p>
+        <p class="travel-banner-body">
+          <span style="text-decoration:underline; font-weight:600;">Gentlemen</span> — Suit &amp; Tie or Sport Coat required. No jeans, No Cowboy Boots, No Open Collar.<br>
+          <span style="text-decoration:underline; font-weight:600;">Ladies</span> — Cocktail Dress or Formal Gown. The ceremony is outdoors at 8,150 ft — layers &amp; block heels warmly recommended.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- RSVP -->
 <section id="rsvp" style="background:var(--ivory); padding:6rem 2rem;">
   <div class="section-inner">
@@ -1055,30 +1061,6 @@ document.getElementById('rsvp-code-input').addEventListener('keypress', function
 });
 </script>
 
-<!-- REGISTRY -->
-<section id="registry">
-  <div class="section-inner">
-    <p class="section-tag reveal">Registry</p>
-    <h2 class="section-title reveal reveal-delay-1" style="color:#7A7468;">A few wishes</h2>
-    <p class="section-subtitle reveal reveal-delay-2" style="color:#7A7468;">Your presence is truly the greatest gift. If you still wish to give something, here is where we are registered.</p>
-
-    <div class="registry-cards">
-      <div class="registry-card reveal">
-        <div class="registry-icon">🏠</div>
-        <p class="registry-store">Anthropologie Home</p>
-        <p class="registry-desc">Thoughtful pieces for our first home together — beautiful, functional, and full of character.</p>
-        <a href="#" class="registry-link">View Our List →</a>
-      </div>
-      <div class="registry-card reveal reveal-delay-1">
-        <div class="registry-icon">✈️</div>
-        <p class="registry-store">Honeymoon Fund</p>
-        <p class="registry-desc">We're planning a three-week journey through Japan. Contributions to adventures are warmly welcome.</p>
-        <a href="#" class="registry-link">Contribute Here →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- TRAVEL -->
 <section id="travel">
   <div class="section-inner">
@@ -1130,6 +1112,30 @@ document.getElementById('rsvp-code-input').addEventListener('keypress', function
         <p class="hotel-details">
           More hotel options coming soon. Check back closer to the date for additional room block information.
         </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTRY -->
+<section id="registry">
+  <div class="section-inner">
+    <p class="section-tag reveal">Registry</p>
+    <h2 class="section-title reveal reveal-delay-1" style="color:#7A7468;">A few wishes</h2>
+    <p class="section-subtitle reveal reveal-delay-2" style="color:#7A7468;">Your presence is truly the greatest gift. If you still wish to give something, here is where we are registered.</p>
+
+    <div class="registry-cards">
+      <div class="registry-card reveal">
+        <div class="registry-icon">🏠</div>
+        <p class="registry-store">Anthropologie Home</p>
+        <p class="registry-desc">Thoughtful pieces for our first home together — beautiful, functional, and full of character.</p>
+        <a href="#" class="registry-link">View Our List →</a>
+      </div>
+      <div class="registry-card reveal reveal-delay-1">
+        <div class="registry-icon">✈️</div>
+        <p class="registry-store">Honeymoon Fund</p>
+        <p class="registry-desc">We're planning a three-week journey through Japan. Contributions to adventures are warmly welcome.</p>
+        <a href="#" class="registry-link">Contribute Here →</a>
       </div>
     </div>
   </div>
