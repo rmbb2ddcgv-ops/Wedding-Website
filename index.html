@@ -399,6 +399,9 @@ section {
 
 /* ——— REGISTRY ——— */
 #registry { background: var(--cream); }
+#registry .section-tag { color: var(--gold); }
+#registry .section-title { color: var(--charcoal); }
+#registry .section-subtitle { color: rgba(46,43,38,1); }
 .registry-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -448,7 +451,36 @@ section {
 .registry-link:hover { color: var(--gold); border-color: var(--gold); }
 
 /* ——— TRAVEL ——— */
-#travel { background: var(--cream); }
+#travel { background: #EAF0E9; }
+.travel-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: var(--ivory);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  padding: 1.5rem 2rem;
+  margin-bottom: 1rem;
+}
+.travel-banner-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+.travel-banner-title {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 0.75rem;
+}
+.travel-banner-body {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
 .travel-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -604,7 +636,36 @@ footer {
   .details-cards { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .registry-cards { grid-template-columns: 1fr; }
-  .travel-grid { grid-template-columns: 1fr; }
+  .travel-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: var(--ivory);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  padding: 1.5rem 2rem;
+  margin-bottom: 1rem;
+}
+.travel-banner-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+.travel-banner-title {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 0.75rem;
+}
+.travel-banner-body {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.travel-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
   .gi1,.gi2,.gi3,.gi4,.gi5,.gi6 { grid-column: auto; grid-row: auto; aspect-ratio: 1/1; }
   nav ul li a { font-size: 0.6rem; }
@@ -616,7 +677,7 @@ footer {
 #gallery { background: var(--charcoal); padding: 6rem 2rem; }
 #gallery .section-tag { color: var(--gold-light); }
 #gallery .section-title { color: var(--ivory); }
-#gallery .section-subtitle { color: rgba(251,248,242,0.5); }
+#gallery .section-subtitle { color: rgba(251,248,242,0.85); }
  
 .gallery-grid {
   display: grid;
@@ -876,10 +937,9 @@ footer {
 
 <!-- GALLERY -->
 <section id="gallery">
-  <p class="section-tag">Gallery</p>
-  <h2 class="section-title">A glimpse of us</h2>
-  <p class="section-subtitle" style="max-width:560px; margin:0 auto 0.75rem; color:rgba(251,248,242,0.6);">From ski days and summit pushes to beach trips and city nights — a few of our favorite moments together.</p>
-  <p style="max-width:480px; margin:0 auto 2rem; opacity:0.4; font-size:0.82em; letter-spacing:0.1em; text-transform:uppercase; text-align:center; color:var(--ivory);">These are the ones we keep coming back to.</p>
+  <p class="section-tag" style="color:#D4B07A;">Gallery</p>
+  <h2 class="section-title" style="color:#7A7468;">A glimpse of us</h2>
+  <p class="section-subtitle" style="max-width:560px; margin:0 auto 0.75rem; color:#7A7468;">From ski days and summit pushes to beach trips and city nights — a few of our favorite moments together.</p>
   <div class="gallery-grid wide-inner">
     <div class="gallery-item gi1 reveal">
       <img src="images/Skinning.jpeg" alt="Night skiing together" loading="lazy">
@@ -941,8 +1001,8 @@ footer {
 <section id="registry">
   <div class="section-inner">
     <p class="section-tag reveal">Registry</p>
-    <h2 class="section-title reveal reveal-delay-1">A few wishes</h2>
-    <p class="section-subtitle reveal reveal-delay-2">Your presence is truly the greatest gift. If you wish to give something, here is where we are registered.</p>
+    <h2 class="section-title reveal reveal-delay-1" style="color:#7A7468;">A few wishes</h2>
+    <p class="section-subtitle reveal reveal-delay-2" style="color:#7A7468;">Your presence is truly the greatest gift. If you still wish to give something, here is where we are registered.</p>
 
     <div class="registry-cards">
       <div class="registry-card reveal">
@@ -965,49 +1025,52 @@ footer {
 <section id="travel">
   <div class="section-inner">
     <p class="section-tag reveal">Travel & Stay</p>
-    <h2 class="section-title reveal reveal-delay-1">Getting here</h2>
-    <p class="section-subtitle reveal reveal-delay-2">Vail Golf Club sits in the heart of the Vail Valley, roughly 100 miles west of Denver. We've arranged room blocks at nearby hotels for your convenience.</p>
+    <h2 class="section-title reveal reveal-delay-1" style="color:#7A7468;">Getting here</h2>
+    <p class="section-subtitle reveal reveal-delay-2" style="color:#7A7468;">Vail Golf Club sits in the heart of the Vail Valley, roughly 100 miles west of Denver. We've arranged room blocks at nearby hotels for your convenience.</p>
 
+    <!-- Denver Banner -->
+    <div class="travel-banner reveal">
+      <div>
+        <p class="travel-banner-label">From Denver International Airport (DEN)</p>
+        <p class="travel-banner-title">Getting to Vail from Denver</p>
+        <p class="travel-banner-body">
+          <strong>By Car:</strong> Take I-70 West to Exit 176 — approximately 1 hr 45 min. Free parking at the venue.<br>
+          <strong>Shuttle:</strong> Colorado Mountain Express runs direct DEN → Vail transfers. Book early for May dates.
+        </p>
+      </div>
+    </div>
+
+    <!-- Eagle Banner -->
+    <div class="travel-banner reveal" style="margin-bottom: 2.5rem;">
+      <div>
+        <p class="travel-banner-label">From Eagle County Regional Airport (EGE)</p>
+        <p class="travel-banner-title">Getting to Vail from Eagle Airport</p>
+        <p class="travel-banner-body">
+          <strong>By Car:</strong> Eagle Airport is just 35 miles from the venue — approximately 40 min drive via I-70 East.<br>
+          <strong>Shuttle:</strong> Colorado Mountain Express also serves EGE with direct transfers to Vail Village.
+        </p>
+      </div>
+    </div>
+
+    <!-- Hotel Cards -->
     <div class="travel-grid">
       <div class="hotel-card reveal">
         <span class="hotel-badge">Room Block Available</span>
-        <p class="hotel-name">The Sonnenalp Hotel</p>
-        <p class="hotel-distance">0.8 miles from venue · 5 min drive</p>
+        <p class="hotel-name">The Hythe, a Luxury Collection Resort</p>
+        <p class="hotel-distance">0.4 miles from venue · 5 min walk</p>
         <p class="hotel-details">
-          <strong>Rate:</strong> From $425/night<br>
-          <strong>Block code:</strong> WEDDING2027<br>
-          <strong>Book by:</strong> 1 April 2027<br><br>
-          A beloved Vail classic — Bavarian-inspired elegance right in the heart of Vail Village.
+          <strong>Rate:</strong> TBD<br>
+          <strong>Block code:</strong> TBD<br>
+          <strong>Book by:</strong> TBD<br><br>
+          Vail's premier luxury resort — ski-in/ski-out access, stunning mountain views, and steps from Vail Village.
         </p>
       </div>
       <div class="hotel-card reveal reveal-delay-1">
-        <span class="hotel-badge">Recommended</span>
-        <p class="hotel-name">Vail Marriott Mountain Resort</p>
-        <p class="hotel-distance">0.5 miles from venue · 3 min drive</p>
+        <span class="hotel-badge">Coming Soon</span>
+        <p class="hotel-name">Hotel TBD</p>
+        <p class="hotel-distance">Details to be updated</p>
         <p class="hotel-details">
-          <strong>Rate:</strong> From $340/night<br>
-          <strong>Block code:</strong> ANTONIAAVERY<br>
-          <strong>Book by:</strong> 1 April 2027<br><br>
-          Spacious mountain rooms with stunning Gore Range views — perfect for families.
-        </p>
-      </div>
-      <div class="hotel-card reveal">
-        <span class="hotel-badge">Budget Friendly</span>
-        <p class="hotel-name">Comfort Inn & Suites, Avon</p>
-        <p class="hotel-distance">9 miles from venue · 15 min drive</p>
-        <p class="hotel-details">
-          <strong>Rate:</strong> From $175/night<br>
-          Book directly — no block code needed.<br><br>
-          A solid, clean option in nearby Avon. We'll have shuttles running so you can relax and celebrate fully.
-        </p>
-      </div>
-      <div class="hotel-card reveal reveal-delay-1">
-        <p class="hotel-name" style="margin-top:0.5rem;">Getting There</p>
-        <p class="hotel-distance">From Denver International Airport</p>
-        <p class="hotel-details">
-          <strong>By Car:</strong> I-70 West to Exit 176 — approx. 1 hr 45 min. Free parking at venue.<br><br>
-          <strong>Shuttle:</strong> Colorado Mountain Express runs direct DEN → Vail transfers. Book early for May dates.<br><br>
-          <strong>Our Shuttles:</strong> Running loops from Vail Village & Lionshead at 2:15 PM, returning at 11:30 PM & 12:30 AM.
+          More hotel options coming soon. Check back closer to the date for additional room block information.
         </p>
       </div>
     </div>
