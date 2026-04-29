@@ -887,41 +887,14 @@ footer {
       </div>
     </div>
 
-    <div class="details-cards" style="margin-top: 1.5rem;">
-      <div class="detail-card reveal">
-        <svg class="detail-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blush)">
-          <circle cx="24" cy="20" r="8"/>
-          <path d="M12 40c0-6.6 5.4-12 12-12s12 5.4 12 12"/>
-        </svg>
-        <p class="detail-type">Dress Code</p>
-        <p class="detail-name">Formal Attire</p>
-        <p class="detail-time">Suits & Dresses Required</p>
-        <p class="detail-address">
-          <span style="font-size:1.15em; text-decoration:underline; text-underline-offset:4px; font-weight:600; display:block; margin-bottom:0.4rem;">Gentlemen</span>
-          Suit &amp; Tie or Sport Coat required<br>
-          No jeans, No Cowboy Boots, No Open Collar
-        </p>
-        <p class="detail-address" style="margin-top:1rem;">
-          <span style="font-size:1.15em; text-decoration:underline; text-underline-offset:4px; font-weight:600; display:block; margin-bottom:0.4rem;">Ladies</span>
-          Cocktail Dress or Formal Gown<br>
-          The ceremony is outdoors at 8,150 ft —<br>
-          layers &amp; block heels warmly recommended
-        </p>
-      </div>
-
-      <div class="detail-card reveal reveal-delay-1">
-        <svg class="detail-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blush)">
-          <rect x="8" y="12" width="32" height="24" rx="2"/>
-          <path d="M8 18l16 11 16-11"/>
-        </svg>
-        <p class="detail-type">RSVP</p>
-        <p class="detail-name">By Post</p>
-        <p class="detail-time">Reply card enclosed · Due by May 1st, 2027</p>
-        <p class="detail-address">
-          A reply card has been enclosed with<br>
-          your invitation. Kindly return it by<br>
-          the first of May — we can't wait to<br>
-          know you'll be celebrating with us.
+    <!-- Dress Code Banner -->
+    <div class="travel-banner reveal" style="margin-top:1.5rem;">
+      <div>
+        <p class="travel-banner-label">Dress Code — Formal Attire</p>
+        <p class="travel-banner-title">Suits &amp; Dresses Required</p>
+        <p class="travel-banner-body">
+          <span style="text-decoration:underline; font-weight:600;">Gentlemen</span> — Suit &amp; Tie or Sport Coat required. No jeans, No Cowboy Boots, No Open Collar.<br>
+          <span style="text-decoration:underline; font-weight:600;">Ladies</span> — Cocktail Dress or Formal Gown. The ceremony is outdoors at 8,150 ft — layers &amp; block heels warmly recommended.
         </p>
       </div>
     </div>
@@ -931,8 +904,8 @@ footer {
 <!-- QUOTE BAND -->
 <div class="quote-band">
   <span class="quote-mark">"</span>
-  <p class="quote-text">Whatever our souls are made of, his and hers are the same.</p>
-  <p class="quote-attr">— Emily Brontë, Wuthering Heights</p>
+  <p class="quote-text">You are the finest, loveliest, tenderest, and most beautiful person I have ever known — and even that is an understatement.</p>
+  <p class="quote-attr">— F. Scott Fitzgerald</p>
 </div>
 
 <!-- GALLERY -->
@@ -997,6 +970,91 @@ footer {
     </div>
   </div>
   
+<!-- RSVP -->
+<section id="rsvp" style="background:var(--ivory); padding:6rem 2rem;">
+  <div class="section-inner">
+    <p class="section-tag reveal" style="color:var(--gold);">RSVP</p>
+    <h2 class="section-title reveal reveal-delay-1" style="color:#7A7468;">Will you be joining us?</h2>
+    <p class="section-subtitle reveal reveal-delay-2" style="color:#7A7468;">Each invitation includes a unique passcode. Enter yours below to access your personal RSVP form.</p>
+
+    <div id="rsvp-portal" style="max-width:480px; margin:3rem auto 0;">
+
+      <!-- Passcode Entry View -->
+      <div id="rsvp-lock" style="text-align:center;">
+        <div style="border:1px solid var(--border); background:#fff; padding:3rem 2.5rem;">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="width:48px; height:48px; color:var(--gold); margin:0 auto 1.5rem; display:block;">
+            <rect x="12" y="22" width="24" height="18" rx="2"/>
+            <path d="M16 22v-6a8 8 0 0116 0v6"/>
+            <circle cx="24" cy="32" r="2" fill="currentColor"/>
+          </svg>
+          <p style="font-family:'Cormorant Garant',serif; font-size:1.2rem; color:var(--charcoal); margin-bottom:0.5rem;">Enter your invitation passcode</p>
+          <p style="font-size:0.85rem; color:var(--muted); margin-bottom:2rem; line-height:1.7;">Your passcode can be found on the back of your invitation card.</p>
+          <input id="rsvp-code-input" type="text" placeholder="e.g. SMITH2027" style="width:100%; padding:0.85rem 1rem; border:1px solid var(--border); font-family:'Cormorant Garant',serif; font-size:1rem; color:var(--charcoal); letter-spacing:0.1em; text-transform:uppercase; outline:none; margin-bottom:1rem; box-sizing:border-box;">
+          <button onclick="checkRsvpCode()" style="width:100%; padding:0.85rem; background:var(--charcoal); color:var(--ivory); font-family:'Cormorant Garant',serif; font-size:0.9rem; letter-spacing:0.15em; text-transform:uppercase; border:none; cursor:pointer;">Access My RSVP →</button>
+          <p id="rsvp-error" style="color:#c0392b; font-size:0.82rem; margin-top:0.75rem; display:none;">That passcode wasn't recognised. Please check your invitation and try again.</p>
+        </div>
+      </div>
+
+      <!-- RSVP Form View (hidden until passcode entered) -->
+      <div id="rsvp-form" style="display:none; border:1px solid var(--border); background:#fff; padding:3rem 2.5rem;">
+        <p style="font-family:'Cormorant Garant',serif; font-size:1.3rem; color:var(--charcoal); text-align:center; margin-bottom:0.5rem;">Welcome!</p>
+        <p style="font-size:0.85rem; color:var(--muted); text-align:center; margin-bottom:2rem;">Please complete your RSVP below.</p>
+
+        <div style="margin-bottom:1.25rem;">
+          <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.4rem;">Full Name</label>
+          <input type="text" placeholder="Your full name" style="width:100%; padding:0.75rem 1rem; border:1px solid var(--border); font-family:'Cormorant Garant',serif; font-size:1rem; color:var(--charcoal); outline:none; box-sizing:border-box;">
+        </div>
+
+        <div style="margin-bottom:1.25rem;">
+          <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.4rem;">Will you be attending?</label>
+          <select style="width:100%; padding:0.75rem 1rem; border:1px solid var(--border); font-family:'Cormorant Garant',serif; font-size:1rem; color:var(--charcoal); outline:none; background:#fff; box-sizing:border-box;">
+            <option value="">Please select...</option>
+            <option value="yes">Joyfully accepts</option>
+            <option value="no">Regretfully declines</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom:1.25rem;">
+          <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.4rem;">Number of Guests</label>
+          <input type="number" min="1" max="10" placeholder="1" style="width:100%; padding:0.75rem 1rem; border:1px solid var(--border); font-family:'Cormorant Garant',serif; font-size:1rem; color:var(--charcoal); outline:none; box-sizing:border-box;">
+        </div>
+
+        <div style="margin-bottom:1.25rem;">
+          <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.4rem;">Dietary Requirements</label>
+          <input type="text" placeholder="Any allergies or dietary needs?" style="width:100%; padding:0.75rem 1rem; border:1px solid var(--border); font-family:'Cormorant Garant',serif; font-size:1rem; color:var(--charcoal); outline:none; box-sizing:border-box;">
+        </div>
+
+        <div style="margin-bottom:2rem;">
+          <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.4rem;">A note for the couple (optional)</label>
+          <textarea rows="3" placeholder="Share a message..." style="width:100%; padding:0.75rem 1rem; border:1px solid var(--border); font-family:'Cormorant Garant',serif; font-size:1rem; color:var(--charcoal); outline:none; resize:none; box-sizing:border-box;"></textarea>
+        </div>
+
+        <button style="width:100%; padding:0.85rem; background:var(--charcoal); color:var(--ivory); font-family:'Cormorant Garant',serif; font-size:0.9rem; letter-spacing:0.15em; text-transform:uppercase; border:none; cursor:pointer;">Submit RSVP →</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+function checkRsvpCode() {
+  const input = document.getElementById('rsvp-code-input').value.trim().toUpperCase();
+  const validCodes = ['DEMO2027']; // placeholder — replace with real codes when backend is ready
+  const error = document.getElementById('rsvp-error');
+  if (validCodes.includes(input)) {
+    document.getElementById('rsvp-lock').style.display = 'none';
+    document.getElementById('rsvp-form').style.display = 'block';
+    error.style.display = 'none';
+  } else {
+    error.style.display = 'block';
+  }
+}
+// Allow pressing Enter to submit passcode
+document.getElementById('rsvp-code-input').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') checkRsvpCode();
+});
+</script>
+
 <!-- REGISTRY -->
 <section id="registry">
   <div class="section-inner">
