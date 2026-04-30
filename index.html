@@ -77,6 +77,12 @@ nav ul {
   display: flex;
   gap: 2.5rem;
 }
+nav ul .nav-divider {
+  color: rgba(251,248,242,0.25);
+  font-size: 0.7rem;
+  pointer-events: none;
+  user-select: none;
+}
 nav ul li a {
   text-decoration: none;
   font-family: 'Cormorant Garant', serif;
@@ -761,7 +767,13 @@ footer {
   }
   nav ul::-webkit-scrollbar { display: none; }
   nav ul li { flex-shrink: 0; }
-  nav ul li a {
+  nav ul .nav-divider {
+  color: rgba(251,248,242,0.25);
+  font-size: 0.7rem;
+  pointer-events: none;
+  user-select: none;
+}
+nav ul li a {
     font-size: 0.44rem;
     letter-spacing: 0.05em;
     padding: 0.2rem 0.3rem;
@@ -845,10 +857,15 @@ footer {
   <div class="nav-monogram">A & A</div>
   <ul>
     <li><a href="#story">Our Story</a></li>
+    <li class="nav-divider">|</li>
     <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#details">Celebration Details</a></li>
+    <li class="nav-divider">|</li>
+    <li><a href="#details">Itinerary</a></li>
+    <li class="nav-divider">|</li>
     <li><a href="#rsvp">RSVP</a></li>
+    <li class="nav-divider">|</li>
     <li><a href="#travel">Travel</a></li>
+    <li class="nav-divider">|</li>
     <li><a href="#registry">Registry</a></li>
   </ul>
 </nav>
@@ -993,7 +1010,7 @@ footer {
 <!-- DETAILS -->
 <section id="details">
   <div class="section-inner">
-    <p class="section-tag reveal">Celebration Details</p>
+    <p class="section-tag reveal">Itinerary</p>
     <h2 class="section-title reveal reveal-delay-1" style="color:var(--charcoal);">The day's schedule</h2>
     <p class="section-subtitle reveal reveal-delay-2" style="color:var(--charcoal);">Everything you need to know for the 'Big Day'.</p>
 
