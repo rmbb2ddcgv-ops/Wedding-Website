@@ -1075,63 +1075,51 @@ nav ul li a {
 <!-- RSVP -->
 <section id="rsvp" style="background:var(--ivory); padding:6rem 2rem;">
   <div class="section-inner">
-    <p class="section-tag reveal" style="color:var(--gold);">RSVP</p>
+    <p class="section-tag reveal" style="color:var(--sage-dark);">RSVP</p>
     <h2 class="section-title reveal reveal-delay-1" style="color:#7A7468;">Will you be joining us?</h2>
-    <p class="section-subtitle reveal reveal-delay-2" style="color:#7A7468;">Each invitation includes a unique passcode. Enter yours below to access your personal RSVP form.</p>
+    <p class="section-subtitle reveal reveal-delay-2" style="color:#7A7468;">Each invitation includes a unique passcode. Enter yours below to access your RSVP.</p>
 
     <div id="rsvp-portal" style="max-width:480px; margin:3rem auto 0;">
 
-      <!-- Passcode Entry View -->
+      <!-- Lock screen -->
       <div id="rsvp-lock" style="text-align:center;">
         <div style="border:1px solid var(--border); background:#fff; padding:3rem 2.5rem;">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="width:48px; height:48px; color:var(--gold); margin:0 auto 1.5rem; display:block;">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="width:48px;height:48px;color:var(--gold);margin:0 auto 1.5rem;display:block;">
             <rect x="12" y="22" width="24" height="18" rx="2"/>
             <path d="M16 22v-6a8 8 0 0116 0v6"/>
             <circle cx="24" cy="32" r="2" fill="currentColor"/>
           </svg>
-          <p style="font-family:'Cormorant Garant',serif; font-size:1.2rem; color:var(--charcoal); margin-bottom:0.5rem;">Enter your invitation passcode</p>
-          <p style="font-size:0.85rem; color:var(--muted); margin-bottom:2rem; line-height:1.7;">Your passcode can be found on the back of your invitation card.</p>
-          <input id="rsvp-code-input" type="text" placeholder="e.g. SMITH2027" style="width:100%; padding:0.85rem 1rem; border:1px solid var(--border); font-family:'Cormorant Garant',serif; font-size:1rem; color:var(--charcoal); letter-spacing:0.1em; text-transform:uppercase; outline:none; margin-bottom:1rem; box-sizing:border-box;">
-          <button onclick="checkRsvpCode()" style="width:100%; padding:0.85rem; background:var(--charcoal); color:var(--ivory); font-family:'Cormorant Garant',serif; font-size:0.9rem; letter-spacing:0.15em; text-transform:uppercase; border:none; cursor:pointer;">Access My RSVP →</button>
-          <p id="rsvp-error" style="color:#c0392b; font-size:0.82rem; margin-top:0.75rem; display:none;">That passcode wasn't recognised. Please check your invitation and try again.</p>
+          <p style="font-family:'Lora',serif;font-size:1.2rem;color:var(--charcoal);margin-bottom:0.5rem;">Enter your invitation code</p>
+          <p style="font-size:0.85rem;color:var(--muted);margin-bottom:2rem;line-height:1.7;">Your code can be found on your invitation.</p>
+          <input id="rsvp-code-input" type="text" placeholder="Enter code" 
+            style="width:100%;padding:0.85rem 1rem;border:1px solid var(--border);font-family:'Lora',serif;font-size:1rem;color:var(--charcoal);letter-spacing:0.05em;outline:none;margin-bottom:1rem;box-sizing:border-box;">
+          <button onclick="checkRsvpCode()" 
+            style="width:100%;padding:0.85rem;background:var(--charcoal);color:var(--ivory);font-family:'Lora',serif;font-size:0.9rem;letter-spacing:0.15em;text-transform:uppercase;border:none;cursor:pointer;">
+            Access RSVP &rarr;
+          </button>
+          <p id="rsvp-error" style="color:#c0392b;font-size:0.82rem;margin-top:0.75rem;display:none;">
+            Code not recognised. Please check your invitation and try again.
+          </p>
         </div>
       </div>
 
-      <!-- RSVP Form View (hidden until passcode entered) -->
-      <div id="rsvp-form" style="display:none; border:1px solid var(--border); background:#fff; padding:3rem 2.5rem;">
-        <p style="font-family:'Cormorant Garant',serif; font-size:1.3rem; color:var(--charcoal); text-align:center; margin-bottom:0.5rem;">Welcome!</p>
-        <p style="font-size:0.85rem; color:var(--muted); text-align:center; margin-bottom:2rem;">Please complete your RSVP below.</p>
+      <!-- RSVP Form -->
+      <div id="rsvp-form" style="display:none;border:1px solid var(--border);background:#fff;padding:3rem 2.5rem;">
+        <input type="hidden" id="rsvp-family-code">
+        <p style="font-family:'Lora',serif;font-size:1.3rem;color:var(--charcoal);text-align:center;margin-bottom:0.5rem;">We are so excited to celebrate with you.</p>
+        <p style="font-size:0.85rem;color:var(--muted);text-align:center;margin-bottom:2rem;line-height:1.7;">Enter each guest's name and let us know if they'll be joining.</p>
+        <div id="guest-fields"></div>
+        <button id="rsvp-submit-btn" onclick="submitRsvp()"
+          style="width:100%;padding:0.85rem;background:var(--charcoal);color:var(--ivory);font-family:'Lora',serif;font-size:0.9rem;letter-spacing:0.15em;text-transform:uppercase;border:none;cursor:pointer;margin-top:1rem;">
+          Submit RSVP &rarr;
+        </button>
+      </div>
 
-        <div style="margin-bottom:1.25rem;">
-          <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.4rem;">Full Name</label>
-          <input type="text" placeholder="Your full name" style="width:100%; padding:0.75rem 1rem; border:1px solid var(--border); font-family:'Cormorant Garant',serif; font-size:1rem; color:var(--charcoal); outline:none; box-sizing:border-box;">
-        </div>
-
-        <div style="margin-bottom:1.25rem;">
-          <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.4rem;">Will you be attending?</label>
-          <select style="width:100%; padding:0.75rem 1rem; border:1px solid var(--border); font-family:'Cormorant Garant',serif; font-size:1rem; color:var(--charcoal); outline:none; background:#fff; box-sizing:border-box;">
-            <option value="">Please select...</option>
-            <option value="yes">Joyfully accepts</option>
-            <option value="no">Regretfully declines</option>
-          </select>
-        </div>
-
-        <div style="margin-bottom:1.25rem;">
-          <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.4rem;">Number of Guests</label>
-          <input type="number" min="1" max="10" placeholder="1" style="width:100%; padding:0.75rem 1rem; border:1px solid var(--border); font-family:'Cormorant Garant',serif; font-size:1rem; color:var(--charcoal); outline:none; box-sizing:border-box;">
-        </div>
-
-        <div style="margin-bottom:1.25rem;">
-          <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.4rem;">Dietary Requirements</label>
-          <input type="text" placeholder="Any allergies or dietary needs?" style="width:100%; padding:0.75rem 1rem; border:1px solid var(--border); font-family:'Cormorant Garant',serif; font-size:1rem; color:var(--charcoal); outline:none; box-sizing:border-box;">
-        </div>
-
-        <div style="margin-bottom:2rem;">
-          <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.4rem;">A note for the couple (optional)</label>
-          <textarea rows="3" placeholder="Share a message..." style="width:100%; padding:0.75rem 1rem; border:1px solid var(--border); font-family:'Cormorant Garant',serif; font-size:1rem; color:var(--charcoal); outline:none; resize:none; box-sizing:border-box;"></textarea>
-        </div>
-
-        <button style="width:100%; padding:0.85rem; background:var(--charcoal); color:var(--ivory); font-family:'Cormorant Garant',serif; font-size:0.9rem; letter-spacing:0.15em; text-transform:uppercase; border:none; cursor:pointer;">Submit RSVP →</button>
+      <!-- Success screen -->
+      <div id="rsvp-success" style="display:none;text-align:center;border:1px solid var(--border);background:#fff;padding:3rem 2.5rem;">
+        <p style="font-size:2rem;margin-bottom:1rem;">&#10084;</p>
+        <p style="font-family:'Lora',serif;font-size:1.3rem;color:var(--charcoal);margin-bottom:0.75rem;">Thank you!</p>
+        <p style="font-size:0.9rem;color:var(--muted);line-height:1.8;">Your RSVP has been received. We can't wait to celebrate with you in Vail.</p>
       </div>
 
     </div>
@@ -1139,24 +1127,178 @@ nav ul li a {
 </section>
 
 <script>
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzKI1_NAZfkLy__PfbN8S8GrtcqCU-7aCKmx-_KBy2MU98eORmvHzzo5UEgieVGCo68hQ/exec';
+
+const guestList = {
+  'Momma': 1,
+  'Allison': 1,
+  'BigDawg': 2,
+  'Puccis': 4,
+  'CLL Witkin': 3,
+  'Carrolls<3': 5,
+  'Kammerer': 4,
+  'Pops': 1,
+  'Cohens': 2,
+  'Comarts': 4,
+  'Genna&Nate<3': 2,
+  'Smalls': 2,
+  'Sir Adam and Family': 5,
+  'Ben&Beth<3': 4,
+  'Sara&Gabe<3': 3,
+  'UncleRobert': 1,
+  'Naomi22': 2,
+  'Tzvi69': 2,
+  'Eitan': 2,
+  'GPE': 2,
+  'Poop': 2,
+  'Lance&Jeremy': 2,
+  'Sir Harrison': 2,
+  'Doc Drip': 2,
+  'NoDa': 2,
+  'SensoryHen': 2,
+  'Morrows': 2,
+  'Mr Mark': 2,
+  'The Don': 2,
+  'eh?': 1,
+  'Haven5': 2,
+  'XboxHatesKyle': 2,
+  'Caleb': 1,
+  'Ms. OrangeTheory': 1,
+  'Our Favorites': 2,
+  'Granny Franny': 1,
+  'Cavounis': 2,
+  'Pintello': 2,
+  '<3': 2,
+  'Ghiradelli': 3,
+  'Nuccio': 1,
+  'Walkers': 2,
+  'Jack&Lee': 2,
+  'Nina': 1,
+  'Dad': 2,
+  'Dom&Nicky<3': 2,
+  'Lauffner': 1,
+  'Freddie': 1,
+  'Richner': 3,
+  'Sayegh': 4,
+  'CORN': 2,
+  'Tostitos': 1,
+  'Totinos': 2,
+  'Fran Diane': 2,
+  'Danile': 2,
+  'Our Besties <3': 2,
+  'Minichelli': 2,
+  'Cam&Lila': 2,
+  'I<3Steve&Paola': 2,
+  'cusey': 2,
+  'Jackie': 2,
+  'Frank&Marie': 2,
+  'Mr. Dan': 2,
+  'RemarkableFinish': 2,
+  'Mania': 1,
+  'Jenny from the block': 1,
+  'My Sharona': 1,
+  'Bagachips': 2
+};
+
+function normalizeCode(code) {
+  return code.trim().toLowerCase();
+}
+
+function buildNormalizedList() {
+  const map = {};
+  for (const [key, val] of Object.entries(guestList)) {
+    map[key.trim().toLowerCase()] = { original: key, size: val };
+  }
+  return map;
+}
+
 function checkRsvpCode() {
-  const input = document.getElementById('rsvp-code-input').value.trim().toUpperCase();
-  const validCodes = ['DEMO2027']; // placeholder - replace with real codes when backend is ready
+  const input = document.getElementById('rsvp-code-input').value;
+  const normalized = normalizeCode(input);
+  const map = buildNormalizedList();
   const error = document.getElementById('rsvp-error');
-  if (validCodes.includes(input)) {
+
+  if (map[normalized]) {
+    const { original, size } = map[normalized];
     document.getElementById('rsvp-lock').style.display = 'none';
     document.getElementById('rsvp-form').style.display = 'block';
+    document.getElementById('rsvp-family-code').value = original;
+    buildGuestFields(size);
     error.style.display = 'none';
   } else {
     error.style.display = 'block';
   }
 }
-// Allow pressing Enter to submit passcode
-document.getElementById('rsvp-code-input').addEventListener('keypress', function(e) {
-  if (e.key === 'Enter') checkRsvpCode();
+
+function buildGuestFields(count) {
+  const container = document.getElementById('guest-fields');
+  container.innerHTML = '';
+  for (let i = 1; i <= count; i++) {
+    const row = document.createElement('div');
+    row.style.cssText = 'display:flex; align-items:center; gap:0.75rem; margin-bottom:0.85rem;';
+    row.innerHTML = `
+      <input type="text" placeholder="Guest ${i} name" 
+        style="flex:1; padding:0.75rem 1rem; border:1px solid var(--border); font-family:'Lora',serif; font-size:0.95rem; color:var(--charcoal); outline:none; box-sizing:border-box;"
+        id="guest-name-${i}">
+      <label style="display:flex; align-items:center; gap:0.4rem; cursor:pointer; flex-shrink:0;">
+        <input type="radio" name="attending-${i}" value="Yes" checked style="accent-color:var(--gold);"> 
+        <span style="font-size:0.8rem; color:var(--charcoal);">Yes</span>
+      </label>
+      <label style="display:flex; align-items:center; gap:0.4rem; cursor:pointer; flex-shrink:0;">
+        <input type="radio" name="attending-${i}" value="No" style="accent-color:var(--gold);"> 
+        <span style="font-size:0.8rem; color:var(--charcoal);">No</span>
+      </label>
+    `;
+    container.appendChild(row);
+  }
+}
+
+async function submitRsvp() {
+  const code = document.getElementById('rsvp-family-code').value;
+  const count = document.getElementById('guest-fields').children.length;
+  const btn = document.getElementById('rsvp-submit-btn');
+  const guests = [];
+
+  for (let i = 1; i <= count; i++) {
+    const name = document.getElementById(`guest-name-${i}`).value.trim();
+    const attending = document.querySelector(`input[name="attending-${i}"]:checked`).value;
+    if (name) guests.push({ name, attending });
+  }
+
+  if (guests.length === 0) {
+    alert('Please enter at least one guest name.');
+    return;
+  }
+
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code, guests })
+    });
+
+    document.getElementById('rsvp-form').style.display = 'none';
+    document.getElementById('rsvp-success').style.display = 'block';
+  } catch (err) {
+    btn.textContent = 'Submit RSVP →';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again.');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const input = document.getElementById('rsvp-code-input');
+  if (input) {
+    input.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') checkRsvpCode();
+    });
+  }
 });
 </script>
-
 <!-- TRAVEL -->
 <section id="travel">
   <div class="section-inner">
