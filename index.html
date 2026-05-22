@@ -1368,6 +1368,13 @@ document.addEventListener('DOMContentLoaded', function() {
     <h2 class="section-title reveal reveal-delay-1" style="color:#7A7468;">A few wishes</h2>
     <p class="section-subtitle reveal reveal-delay-2" style="color:#7A7468;">Your presence is truly the greatest gift. If you still wish to give something, here is where we are registered.</p>
 
+    <!-- Coming Soon Overlay -->
+    <div style="position:relative; margin-top:3rem;">
+      <div style="position:absolute; inset:0; background:rgba(243,237,224,0.92); z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem;">
+        <p style="font-family:'Lora',serif; font-size:1.3rem; color:var(--charcoal); margin-bottom:0.5rem;">Coming Soon</p>
+        <p style="font-size:0.85rem; color:var(--muted); line-height:1.8; max-width:320px;">We're still putting our wishlist together. Check back closer to the date.</p>
+      </div>
+      <div style="filter:blur(3px); pointer-events:none;">
     <div class="registry-cards">
       <div class="registry-card reveal">
         <div class="registry-icon">🏠</div>
@@ -1380,6 +1387,8 @@ document.addEventListener('DOMContentLoaded', function() {
         <p class="registry-store">Honeymoon Fund</p>
         <p class="registry-desc">We're planning a three-week journey through Japan. Contributions to adventures are warmly welcome.</p>
         <a href="#" class="registry-link">Contribute Here →</a>
+      </div>
+    </div>
       </div>
     </div>
   </div>
